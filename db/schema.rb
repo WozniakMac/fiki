@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_180_812_114_224) do
+ActiveRecord::Schema.define(version: 20_180_812_153_444) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
+  create_table 'articles', force: :cascade do |t|
+    t.string 'title'
+    t.string 'language'
+    t.text 'content'
+    t.bigint 'user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_articles_on_user_id'
+  end
 
   create_table 'users', force: :cascade do |t|
     t.string 'email', default: '', null: false
@@ -30,4 +40,6 @@ ActiveRecord::Schema.define(version: 20_180_812_114_224) do
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
+
+  add_foreign_key 'articles', 'users'
 end

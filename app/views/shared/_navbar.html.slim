@@ -1,13 +1,17 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  a.navbar-brand[href="#"]
+  a.navbar-brand[href="/"]
     | Fiki
   button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"]
     span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
-      li.nav-item.active
-        = link_to 'Home', :root
+      li.nav-item
+        = link_to 'Home', :root, class: 'nav-link'
+      li.nav-item
+        = link_to 'Articles', :articles, class: 'nav-link'
+      li.nav-item
+        = link_to 'My Articles', :my_articles, class: 'nav-link'
     - if user_signed_in?
-      = link_to 'SignOut', :destroy_user_session, method: :delete
+      = link_to 'SignOut', :destroy_user_session, method: :delete, class: 'nav-link'
     - else
-      = link_to 'SignIn', :new_user_session
+      = link_to 'SignIn', :new_user_session, class: 'nav-link'

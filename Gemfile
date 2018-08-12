@@ -28,6 +28,7 @@ group :development do
   gem 'guard-rspec', require: false
   gem 'guard-rubocop', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'pre-commit', require: false
   gem 'rubocop', '~> 0.55.0', require: false
   gem 'rubocop-rspec'
   gem 'spring'

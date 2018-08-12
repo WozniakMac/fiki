@@ -1,0 +1,5 @@
+---
+:common_remove: []
+:common_add:
+- :rails
+- :rubocop

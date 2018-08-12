@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy, :my]
 
   def index
-    @articles = Article.all
+    @articles = Article.search(params[:term])
   end
 
   def my

@@ -30,3 +30,7 @@ Layout/EndOfLine:
 Style/StringLiterals:
   EnforcedStyle: single_quotes
 
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*.*'
+

@@ -33,6 +33,7 @@ Style/StringLiterals:
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*.*'
+    - 'app/helpers/application_helper.rb'
 
 RSpec/ExampleLength:
   Exclude:

@@ -7,11 +7,11 @@ p
   strong Language:
   = @article.language
 p
-  strong Content:
-  = @article.content
-p
   strong User:
-  = @article.user
+  = @article.user.email
+p
+  strong Content:
+  = markdown @article.content
 
 => link_to 'Edit', edit_article_path(@article)
 '|

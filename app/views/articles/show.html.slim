@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @article.title
+p
+  strong Language:
+  = @article.language
+p
+  strong User:
+  = @article.user.email
+p
+  strong Content:
+  = markdown @article.content
+
+=> link_to 'Edit', edit_article_path(@article)
+'|
+=< link_to 'Back', articles_path
